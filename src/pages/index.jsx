@@ -4,6 +4,7 @@ import styled from 'react-emotion';
 import 'typeface-cantata-one';
 import 'typeface-open-sans';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
+import Navigation from '../components/Navigation';
 import SEO from '../components/SEO';
 import SVG from '../components/SVG';
 import ProjectCard from '../components/ProjectCard';
@@ -13,6 +14,21 @@ import { colors } from '../../tailwind';
 import triangle from '../images/triangle.svg';
 import avatar from '../images/avatar.jpg';
 import '../styles/global';
+
+const HireMe = styled.div`
+  ${tw('w-full xl:w-2/3')}
+`;
+
+const Header = styled.div`
+  background: ${props => props.theme.brand.secondary};
+  color: #fff;
+  margin-bottom: 6rem;
+  padding: 6rem ${props => props.theme.spacer.horizontal};
+  text-align: center;
+  h1 {
+    margin-bottom: 0;
+  }
+`;
 
 const Divider = styled(ParallaxLayer)`
   ${tw('absolute w-full h-full')};
@@ -127,7 +143,7 @@ const Footer = styled.footer`
 const Index = () => (
   <React.Fragment>
     <SEO />
-    <Parallax pages={5}>
+    <Parallax pages={4}>
       <Divider speed={0.2} offset={0}>
         <UpDown>
           <SVG icon="triangle" className={hidden} width={48} stroke={colors.orange} left="10%" top="20%" />
@@ -157,10 +173,11 @@ const Index = () => (
       </Divider>
       <Content speed={0.4} offset={0}>
         <Hero>
+          <Avatar src={avatar} alt="Lorenzo García" />
           <BigTitle>
-            Hello, <br /> I'm John Doe.
+            Hello, <br /> I'm Lorenzo García.
           </BigTitle>
-          <Subtitle>I'm creating noice web experiences for the next generation of consumer-facing companies.</Subtitle>
+          <Subtitle>Freelance Full-Stack Developer.</Subtitle>
         </Hero>
       </Content>
       <DividerMiddle
@@ -171,36 +188,36 @@ const Index = () => (
       />
       <Content speed={0.4} offset={1.2} factor={2}>
         <Inner>
-          <Title>Projects</Title>
+          <Title>Skills</Title>
           <ProjectsWrapper>
             <ProjectCard
-              title="Freiheit"
-              link="https://www.behance.net/gallery/58937147/Freiheit"
-              bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
-            >
-              This project is my entry to Adobe's #ChallengeYourPerspective contest.
-            </ProjectCard>
-            <ProjectCard
-              title="Harry Potter"
-              link="https://www.behance.net/gallery/52915793/Harry-Potter"
+              title="Front-End"
+              // link="https://www.behance.net/gallery/52915793/Harry-Potter"
               bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
             >
-              I entered the DOCMA 2017 award with this Harry Potter inspired image.
+              JavaScript, ES6, React, Angular, Redux, Babel, Webpack, D3
             </ProjectCard>
             <ProjectCard
-              title="Tomb Raider"
-              link="https://www.behance.net/gallery/43907099/Tomb-Raider"
+              title="Back-End"
+              // link="https://www.behance.net/gallery/52915793/Harry-Potter"
+              bg="linear-gradient(to right, #111111 0%, #EEEEEE 100%)"
+            >
+              Node.js, Express, PostgreSQL, MySQL, MongoDB
+            </ProjectCard>
+            <ProjectCard
+              title="Dev Ops"
+              // link="https://www.behance.net/gallery/43907099/Tomb-Raider"
               bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
             >
-              Recreation of a Tomb Raider Wallpaper (Fan Art)
+              AWS, Google Cloud, Docker, Vagrant, CI/CD, Jenkins, GitLab, UNIX
             </ProjectCard>
-            <ProjectCard
+            {/* <ProjectCard
               title="Eagle"
-              link="https://www.behance.net/gallery/38068151/Eagle"
+              // link="https://www.behance.net/gallery/38068151/Eagle"
               bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
             >
               A fantasy image manipulation relocating the habitat of wild animals.
-            </ProjectCard>
+            </ProjectCard> */}
           </ProjectsWrapper>
         </Inner>
       </Content>
@@ -227,7 +244,7 @@ const Index = () => (
         <SVG icon="hexa" width={8} stroke={colors.yellow} left="80%" top="70%" />
       </Divider>
       <Divider bg="#23262b" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={3} />
-      <Divider speed={0.1} offset={3}>
+      {/* <Divider speed={0.1} offset={3}>
         <UpDown>
           <SVG icon="box" className={hidden} width={6} fill={colors.blue} left="50%" top="75%" />
           <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
@@ -245,8 +262,8 @@ const Index = () => (
         <SVG icon="box" width={6} fill={colors.orange} left="10%" top="10%" />
         <SVG icon="box" width={12} fill={colors['grey-darkest']} left="20%" top="30%" />
         <SVG icon="hexa" width={8} stroke={colors['grey-darkest']} left="80%" top="70%" />
-      </Divider>
-      <Content speed={0.4} offset={3}>
+      </Divider> */}
+      {/* <Content speed={0.4} offset={3}>
         <Inner>
           <Title>About</Title>
           <AboutHero>
@@ -264,8 +281,8 @@ const Index = () => (
             all right?
           </AboutDesc>
         </Inner>
-      </Content>
-      <Divider fill="#23262b" speed={0.2} offset={4}>
+      </Content> */}
+      {/* <Divider fill="#23262b" speed={0.2} offset={4}>
         <WaveWrapper>
           <InnerWave>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 338.05" preserveAspectRatio="none">
@@ -280,22 +297,17 @@ const Index = () => (
             </svg>
           </InnerWave>
         </WaveWrapper>
-      </Divider>
-      <Content speed={0.4} offset={4}>
+      </Divider> */}
+      <Content speed={0.4} offset={3}>
         <Inner>
           <Title>Get in touch</Title>
           <ContactText>
-            Say <a href="mailto:plizNoSp4m@domain.tld">Hi</a> or find me on other platforms:{' '}
-            <a href="https://dribbble.com/LekoArts">Dribbble</a> &{' '}
-            <a href="https://www.instagram.com/lekoarts.de/">Instagram</a>
+            Say <a href="mailto:hello@lorenzogm.com">Hi</a> or find me on{' '}
+            <a href="https://www.linkedin.com/in/lorenzogm/">LinkedIn</a>
           </ContactText>
         </Inner>
-        <Footer>
-          &copy; 2018 by Gatsby Starter Portfolio Cara.{' '}
-          <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">Github Repository</a>.
-        </Footer>
       </Content>
-      <Divider speed={0.1} offset={4}>
+      <Divider speed={0.1} offset={3}>
         <UpDown>
           <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
           <SVG icon="triangle" width={8} stroke={colors['grey-darkest']} left="25%" top="5%" />
